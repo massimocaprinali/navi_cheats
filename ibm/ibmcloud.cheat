@@ -1,0 +1,3 @@
+% IBM Cloud windows password
+
+ibmcloud is instance-initialization-values <instance_name> --private-key @~/.ssh/id_rsa
