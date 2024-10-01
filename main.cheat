@@ -1,0 +1,39 @@
+% Dropbox ignored files
+
+find . -xattrname com.dropbox.ignored
+
+% DNS Record type TXT
+
+echo "$ nslookup -type=TXT <key> <dns_server>"
+nslookup -type=TXT <key> <dns_server>
+
+$ dns_server: echo "1.1.1.1"  | tr ';' '\n'
+
+% Exiftool rename using Creation Date
+
+echo "$ exiftool -v3 '-filename<CreateDate' -d IMG_%Y%m%d_%H%M%S%%-c.%%le -r -ext cr2 -ext jpeg ."
+exiftool -v3 '-filename<CreateDate' -d IMG_%Y%m%d_%H%M%S%%-c.%%le -r -ext cr2 -ext jpeg .
+
+% Convert SVG to PNG
+
+echo "$ magick <svg> -density <density> <basename>.png"
+magick <svg> -density <density> <basename>.png
+
+$ density: echo "96"
+$ basename: echo "$(basename "${svg%.*}")"
+
+% My IP
+
+curl ipecho.net/plain ; echo
+
+% Transfer GCode
+
+scp <gcode_file> pi@cncjs.local:/home/pi/.cncjs/watch
+
+% Terraform version
+
+tfswitch -b $HOME/.bin/terraform <version>
+
+% Search in pdfs
+
+for file in *.pdf; do pdftotext "$file" - | grep "<text_to_search>"; done;
