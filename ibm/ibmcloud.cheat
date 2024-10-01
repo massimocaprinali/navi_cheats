@@ -1,3 +1,5 @@
 % IBM Cloud windows password
 
+### VSI
+# Get Windows instance password
 ibmcloud is instance-initialization-values <instance_name> --private-key @~/.ssh/id_rsa
